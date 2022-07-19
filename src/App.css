@@ -42,3 +42,31 @@ nav .iconMenu{
 .btns button img{
   height: 1.4em;
 }
+
+main{
+  padding: 4em 2em;
+}
+
+main h1{
+  font-size: 300%;
+  font-weight: 700;
+}
+
+main p{
+  margin: 1em 0;
+  line-height: 1.5;
+  color: var(--VeryDarkGray)
+}
+
+main button{
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  border: none;
+  background-color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+main button img{
+  margin-left: 1em;
+}

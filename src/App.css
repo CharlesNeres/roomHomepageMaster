@@ -61,6 +61,11 @@ nav ul li{
   color: white;
   width: 3.5em;
   height: 3.5em;
+  cursor: pointer;
+}
+
+.btns button:hover{
+  background-color: var(--VeryDarkGray);
 }
 
 .btns button img{

@@ -6,6 +6,9 @@ import angleRigth from './images/icon-angle-right.svg'
 import iconArrow from './images/icon-arrow.svg';
 import imgAboutDark from './images/image-about-dark.jpg';
 import imgAboutLight from './images/image-about-light.jpg';
+import img1 from './images/mobile-image-hero-1.jpg';
+import img2 from './images/mobile-image-hero-2.jpg';
+import img3 from './images/mobile-image-hero-3.jpg';
 import React from "react";
 
 class App extends React.Component{
@@ -14,6 +17,12 @@ class App extends React.Component{
     super(props);
     this.showMenu = this.showMenu.bind(this);
     this.hideMenu = this.hideMenu.bind(this);
+    this.previustImg = this.previustImg.bind(this);
+    this.nextImg = this.nextImg.bind(this);
+    this.state = {
+      count: 0,
+      imgs: [img1, img2, img3]
+    }
   }
 
   showMenu(e){
@@ -26,11 +35,26 @@ class App extends React.Component{
     menu.style.transform = "translateX(-100%)";
   }
 
+  previustImg(){
+    this.setState({
+      count: this.state.count == 0 ? 2 : this.state.count - 1
+    })
+  }
+
+  nextImg(){
+    this.setState({
+      count: this.state.count == 2 ? 0 : this.state.count + 1
+    })
+  }
+
   render(){
+    const myStyle = {
+      backgroundImage: `url(${this.state.imgs[this.state.count]})`
+    }
     return (
       <div className="App">
         {/* ---------------- header */}
-        <header>
+        <header style={myStyle}>
           <div>
             <img src={iconMenu} onClick={this.showMenu} className="iconMenu" />
             <a href="">
@@ -38,10 +62,10 @@ class App extends React.Component{
             </a>
           </div>
           <div className='btns'>
-            <button>
+            <button onClick={this.previustImg}>
               <img src={angleLeft} />
             </button>            
-            <button>
+            <button onClick={this.nextImg}>
               <img src={angleRigth} /> 
             </button>
           </div>

@@ -14,14 +14,38 @@ header{
   position: relative;
 }
 
-header nav{
+header div{
   text-align: center;
   position: relative;
 }
 
-nav .iconMenu{
+div .iconMenu{
   position: absolute;
   left: 0;
+  cursor: pointer;
+}
+
+nav{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -o-transform: translateX(-100%);
+}
+
+nav ul {
+  text-align: center;
+}
+
+nav ul li{
+  display: inline-block;
+  padding: 2.5em 2em;
+  cursor: pointer;
 }
 
 .btns{
